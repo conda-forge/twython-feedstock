@@ -7,16 +7,15 @@ Package license: MIT
 
 Feedstock license: BSD 3-Clause
 
-Summary: Actively maintained, pure Python wrapper for the     Twitter API. Supports both normal and streaming Twitter APIs
+Summary: Actively maintained, pure Python wrapper for the Twitter API. Supports both normal and streaming Twitter APIs
 
 
 
 Current build status
 ====================
 
-[![Linux](https://img.shields.io/circleci/project/github/conda-forge/twython-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/twython-feedstock)
-[![OSX](https://img.shields.io/travis/conda-forge/twython-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/twython-feedstock)
-[![Windows](https://img.shields.io/appveyor/ci/conda-forge/twython-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/twython-feedstock/branch/master)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/twython-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/twython-feedstock)
 
 Current release info
 ====================

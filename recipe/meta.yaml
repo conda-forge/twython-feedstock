@@ -1,8 +1,7 @@
 {% set name = "twython" %}
-{% set version = "3.7.0" %}
+{% set version = "3.8.0" %}
 {% set bundle = "tar.gz" %}
-{% set hash_type = "sha256" %}
-{% set hash = "24ae29b4dd8d69df81707eb5fb7a1babd6689a3d69cd618f0647997d6179d338" %}
+{% set hash = "145c07af6dede60906efa16b1d9648d830194833b2684a97e96b196b3250c8b1" %}
 
 package:
   name: {{ name|lower }}
@@ -11,12 +10,12 @@ package:
 source:
   fn: {{ name }}-{{ version }}.{{ bundle }}
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
-  {{ hash_type }}: {{ hash }}
+  sha256: {{ hash }}
 
 build:
   noarch: python
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
@@ -38,7 +37,7 @@ about:
   license_file: LICENSE
   license: MIT
   license_family: MIT
-  summary: 'Actively maintained, pure Python wrapper for the Twitter API. Supports both normal and streaming Twitter APIs'
+  summary: Actively maintained, pure Python wrapper for the Twitter API. Supports both normal and streaming Twitter APIs
   dev_url: https://github.com/ryanmcgrath/twython/
   doc_url: https://twython.readthedocs.io/en/latest/
 

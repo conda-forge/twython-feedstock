@@ -1,0 +1,51 @@
+schema_version: 1
+
+context:
+  name: twython
+  version: 3.9.1
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: 5a3f0ac24d10705257028fb4205bfedf432ff28d358b796e0c2f01a2f9990c84
+
+build:
+  number: 2
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+    - requests >=2.1.0
+    - requests-oauthlib >=0.4.0
+
+tests:
+  - python:
+      imports:
+        - twython
+        - twython.streaming
+      pip_check: true
+      python_version:
+        - ${{ python_min }}
+        - "*"
+
+about:
+  license_file: LICENSE
+  license: MIT
+  summary: Actively maintained, pure Python wrapper for the Twitter API. Supports both normal and streaming Twitter APIs
+  homepage: https://github.com/ryanmcgrath/twython/
+  repository: https://github.com/ryanmcgrath/twython/
+  documentation: https://twython.readthedocs.io/en/latest/
+
+extra:
+  recipe-maintainers:
+    - pmlandwehr
+    - jan-janssen
